@@ -4,10 +4,6 @@
  */
 package APP.domain.services;
 
-/**
- *
- * @author NaGotO
- */
 public class RegisterPatient {
     
 }
