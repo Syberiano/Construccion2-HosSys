@@ -1,7 +1,10 @@
 package APP.domain.services;
+<<<<<<< HEAD
+=======
 
 import APP.domain.model.User;
 
+>>>>>>> cc138e542ad2697b68046ef66ce3c33861d339c9
 public class CreateUser {
 
     public User execute(Long id, String document, String name, String username, String email, String password, String role) {
