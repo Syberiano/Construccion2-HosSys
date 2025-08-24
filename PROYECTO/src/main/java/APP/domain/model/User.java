@@ -2,11 +2,11 @@ package APP.domain.model;
 import APP.domain.model.emuns.Role;
 
 public class User {
-    private Long id;          // id interno
-    private String document;  // cedula o documento
-    private String name;      // nombre real
-    private String username;  // nombre de usuario
-    private String email;     // correo electrónico
+    private Long id;          
+    private String document;  
+    private String name;      
+    private String username;  
+    private String email;     
     private String password;  
     private String role;      
 
