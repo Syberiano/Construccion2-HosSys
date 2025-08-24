@@ -6,7 +6,6 @@ public class CreateUser {
 
     public User execute(Long id, String document, String name, String username, String email, String password, String role) {
         
-      
         if (username == null || username.isEmpty()) {
             throw new IllegalArgumentException("El nombre de usuario no puede estar vacío");
         }
@@ -19,16 +18,6 @@ public class CreateUser {
             throw new IllegalArgumentException("La contraseña debe tener al menos 6 caracteres");
         }
 
-       
-        return new User(
-                id,
-                document,
-                name,
-                username,
-                email,
-                password,
-                role
-                
-        );
+        return new User(id, document, name, username, email, password, role);
     }
 }
