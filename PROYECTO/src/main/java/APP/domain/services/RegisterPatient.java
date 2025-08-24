@@ -1,13 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package APP.domain.services;
 
-/**
- *
- * @author NaGotO
- */
+import APP.domain.model.Patient;
+
+
 public class RegisterPatient {
-    
+
+    public Patient registerPatient(String id, String name, int age, String healthInsuranceId) {
+        Patient patient = new Patient();
+        patient.setId(id);
+        patient.setName(name);
+        patient.setAge(age);
+        patient.setHealthInsuranceId(healthInsuranceId);
+        return patient;
+    }
 }

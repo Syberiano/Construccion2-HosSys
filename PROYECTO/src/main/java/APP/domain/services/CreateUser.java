@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package APP.domain.services;
 
-/**
- *
- * @author NaGotO
- */
+import APP.domain.model.User;
+
 public class CreateUser {
-    
+
+    public User createUser(String id, String name, String email, String role) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        user.setEmail(email);
+        user.setRole(role);
+        return user;
+    }
 }

@@ -1,4 +1,5 @@
 package APP.domain.model;
+import APP.domain.model.emuns.Role;
 
 public class User {
     private Long id;
