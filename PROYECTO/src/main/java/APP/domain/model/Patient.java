@@ -1,40 +1,37 @@
 package APP.domain.model;
 
-public class Patient {
-    private Long id;
-    private String name;
-    private int age;
-    private String identification;
+import APP.domain.model.emuns.Role;
+
+import java.util.Date;
+
+public class Patient extends Person{
+
     private EmergencyContact emergencyContact;
     private HealthInsurance healthInsurance;
 
-    public Patient() {}
+    public Patient(String id, String document, String name, String phoneNumber, Date birthDate, String address, String gender, Role role) {
+        super(id, document, name, phoneNumber, birthDate, address, gender, role);
+    }
 
-    public Patient(Long id, String name, int age, String identification,
-                   EmergencyContact emergencyContact, HealthInsurance healthInsurance) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.identification = identification;
+    public Patient(String id, String document, String name, String phoneNumber, Date birthDate, String address, String gender, Role role, EmergencyContact emergencyContact, HealthInsurance healthInsurance) {
+        super(id, document, name, phoneNumber, birthDate, address, gender, role);
         this.emergencyContact = emergencyContact;
         this.healthInsurance = healthInsurance;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public EmergencyContact getEmergencyContact() {
+        return emergencyContact;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setEmergencyContact(EmergencyContact emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
+    public HealthInsurance getHealthInsurance() {
+        return healthInsurance;
+    }
 
-    public String getIdentification() { return identification; }
-    public void setIdentification(String identification) { this.identification = identification; }
-
-    public EmergencyContact getEmergencyContact() { return emergencyContact; }
-    public void setEmergencyContact(EmergencyContact emergencyContact) { this.emergencyContact = emergencyContact; }
-
-    public HealthInsurance getHealthInsurance() { return healthInsurance; }
-    public void setHealthInsurance(HealthInsurance healthInsurance) { this.healthInsurance = healthInsurance; }
+    public void setHealthInsurance(HealthInsurance healthInsurance) {
+        this.healthInsurance = healthInsurance;
+    }
 }

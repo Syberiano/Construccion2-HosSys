@@ -1,10 +1,11 @@
 package APP.domain.model;
+import APP.domain.model.emuns.Role;
 
 public class User extends Person {
     private String username;
     private String email;
     private String password;
-    private String role;
+    private Role role;
 
    
     public User(Long id, String document, String name,
@@ -13,7 +14,7 @@ public class User extends Person {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.Role = role;
     }
 
         public String getUsername() {
@@ -40,11 +41,11 @@ public class User extends Person {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
     public void setRole(String role) {
-        this.role = role;
+        this.Role = role;
     }
 }
