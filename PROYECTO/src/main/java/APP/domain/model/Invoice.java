@@ -10,14 +10,17 @@ public class Invoice {
     private String policyId;
     private boolean policyStatus;
     private Date policyEndDate;
+    private String status;
 
-    public Invoice(String patientName, String doctorName, String insuranceCompanyName, String policyId, boolean policyStatus, Date policyEndDate) {
+    public Invoice(String patientName, String doctorName, String insuranceCompanyName,
+                   String policyId, boolean policyStatus, Date policyEndDate) {
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.insuranceCompanyName = insuranceCompanyName;
         this.policyId = policyId;
         this.policyStatus = policyStatus;
         this.policyEndDate = policyEndDate;
+        this.status = "GENERADA";
     }
 
     public String getPatientName() {
@@ -67,6 +70,13 @@ public class Invoice {
     public void setPolicyEndDate(Date policyEndDate) {
         this.policyEndDate = policyEndDate;
     }
-    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
 }
