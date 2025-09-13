@@ -15,7 +15,7 @@ public class CreateClinicalOrder {
     private PatientPort patientPort;
     private ClinicalOrderPort clinicalOrderPort;
     
-    public  void crate(ClinicalOrder clinicalOrder) throws Exception{
+    public  void create(ClinicalOrder clinicalOrder) throws Exception{
         User doctor = userPort.findByDocument(clinicalOrder.getDoctor());
         if(doctor == null || !doctor.getRole().equals(Role.DOCTOR)){
             throw new Exception("Las ordenes solo pueden ser creadas por los doctores");
