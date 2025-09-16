@@ -1,5 +1,10 @@
 package APP.domain.ports;
 
-public class UpdateMedicineInventoryPort {
+import APP.domain.model.Medicine;
 
+public interface UpdateMedicineInventoryPort {
+    
+    Medicine updateStock(String medicineId, int quantity);
+    
+    Medicine updateMedicine(Medicine medicine);
 }
