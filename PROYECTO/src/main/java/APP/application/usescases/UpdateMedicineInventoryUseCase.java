@@ -2,23 +2,17 @@ package APP.application.usescases;
 
 import APP.domain.model.Medicine;
 import APP.domain.ports.UpdateMedicineInventoryPort;
-import APP.domain.validators.MedicineValidator;
+import APP.domain.services.UpdateMedicineInventory;
 
 public class UpdateMedicineInventoryUseCase {
     
-    private final UpdateMedicineInventoryPort updateMedicineInventoryPort;
+    private final UpdateMedicineInventory updateInventory;
     
-    public UpdateMedicineInventoryUseCase(UpdateMedicineInventoryPort updateMedicineInventoryPort) {
-        this.updateMedicineInventoryPort = updateMedicineInventoryPort;
+    public UpdateMedicineInventoryUseCase(UpdateMedicineInventoryPort updatePort) {
+        this.updateInventory = new UpdateMedicineInventory(updatePort);
     }
     
-    public Medicine updateMedicineStock(String medicineId, int quantity) {
-        MedicineValidator.validateStockOperation(quantity);
-        return updateMedicineInventoryPort.updateStock(medicineId, quantity);
-    }
-    
-    public Medicine updateMedicine(Medicine medicine) {
-        MedicineValidator.validate(medicine);
-        return updateMedicineInventoryPort.updateMedicine(medicine);
+    public Medicine execute(String medicineId, int quantity) {
+        return updateInventory.updateStock(medicineId, quantity);
     }
 }
