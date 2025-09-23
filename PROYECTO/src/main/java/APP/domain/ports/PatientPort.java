@@ -4,9 +4,16 @@ import APP.domain.model.Patient;
 
 public interface PatientPort {
 
-    Patient findByDocument(Patient patient);
+    Patient save(Patient patient);
 
-    Patient findByHealthInsurance(Patient patient);
+    boolean existsById(String id);
+    
 
-    void save(Patient patient);
+    boolean existsByDocument(String document);
+
+    Patient findById(String id);
+
+    Patient findByDocument(String document);
+
+    boolean deleteById(String id);
 }

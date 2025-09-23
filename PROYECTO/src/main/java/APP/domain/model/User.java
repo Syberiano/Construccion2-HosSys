@@ -1,23 +1,23 @@
 package APP.domain.model;
 import APP.domain.model.emuns.Role;
+import java.util.Date;
 
 public class User extends Person {
     private String username;
     private String email;
     private String password;
-    private Role role;
 
-   
-    public User(Long id, String document, String name,
-                String username, String email, String password, String role) {
-        super(id, document, name); 
+
+    public User(String id, String document, String name, String phoneNumber,
+               Date birthDate, String address, String gender, Role role,
+               String username, String email, String password) {
+        super(id, document, name, phoneNumber, birthDate, address, gender, role);
         this.username = username;
         this.email = email;
         this.password = password;
-        this.Role = role;
     }
 
-        public String getUsername() {
+    public String getUsername() {
         return username;
     }
 
@@ -41,11 +41,15 @@ public class User extends Person {
         this.password = password;
     }
 
+
+    @Override
     public Role getRole() {
-        return role;
+        return super.getRole();
     }
 
-    public void setRole(String role) {
-        this.Role = role;
+
+    @Override
+    public void setRole(Role role) {
+        super.setRole(role);
     }
 }
