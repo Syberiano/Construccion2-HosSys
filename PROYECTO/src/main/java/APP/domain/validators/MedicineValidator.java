@@ -10,9 +10,9 @@ public class MedicineValidator extends SimpleValidator {
         validateName(medicine.getName());
         validateCost(medicine.getCost());
         
-        if (medicine.getStock() < 0) {
+        /*if (medicine.getStock() < 0) {
             throw new IllegalArgumentException("El stock no puede ser negativo");
-        }
+        }*/
     }
     
     public static void validateStockOperation(int quantity) {

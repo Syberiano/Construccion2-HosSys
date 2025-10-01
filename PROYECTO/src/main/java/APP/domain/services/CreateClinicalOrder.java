@@ -20,7 +20,7 @@ public class CreateClinicalOrder {
         if(doctor == null || !doctor.getRole().equals(Role.DOCTOR)){
             throw new Exception("Las ordenes solo pueden ser creadas por los doctores");
         }
-        Patient patient = patientPort.findByDocument(clinicalOrder.getPatient());
+        Patient patient = patientPort.findByDocument(clinicalOrder.getPatient().getDocument());
         if(patient == null){
             throw new Exception("Las ordenes solo se aplican a pacientes registrados");
         }

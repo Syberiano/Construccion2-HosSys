@@ -8,7 +8,7 @@ public class HealthInsuranceValidator extends SimpleValidator {
         validateNotNull(insurance, "El seguro médico no puede ser nulo");
         validateInsuranceId(insurance.getInsuranceId());
         validateProviderName(insurance.getProviderName());
-        validatePolicyNumber(insurance.getPolicyNumber());
+        //validatePolicyNumber(insurance.getPolicyNumber());
     }
     
     private static void validateInsuranceId(String insuranceId) {

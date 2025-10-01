@@ -86,4 +86,4 @@ public class CreatePatient {
             System.out.println("Advertencia: Paciente menor de edad. Verificar representante legal.");
         }
     }
-}
+

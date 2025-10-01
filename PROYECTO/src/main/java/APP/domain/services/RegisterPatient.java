@@ -12,13 +12,13 @@ public class RegisterPatient {
     }
 
     public void register(Patient patient) throws Exception {
-        if (patientPort.findByDocument(patient) != null) {
+        if (patientPort.findByDocument(patient.getDocument()) != null) {
             throw new Exception("Ya hay un paciente registrado con este documento.");
         }
 
-        if (patientPort.findByHealthInsurance(patient) != null) {
+        /*if (patientPort.findByHealthInsurance(patient) != null) {
             throw new Exception("Este paciente ya está registrado en el mismo seguro médico.");
-        }
+        }*/
 
         patientPort.save(patient);
     }

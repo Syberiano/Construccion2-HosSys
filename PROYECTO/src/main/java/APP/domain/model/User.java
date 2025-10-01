@@ -17,6 +17,10 @@ public class User extends Person {
         this.password = password;
     }
 
+    public User(Long id, String document, String name, String username, String email, String password, String role) {
+        super();
+    }
+
     public String getUsername() {
         return username;
     }

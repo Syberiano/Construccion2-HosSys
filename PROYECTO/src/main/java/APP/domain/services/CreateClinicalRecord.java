@@ -19,7 +19,7 @@ public class CreateClinicalRecord {
     private  ClinicalRecordPort clinicalRecordPort;
     
     public  void create(ClinicalRecord clinicalRecord) throws Exception{
-        Patient patient = patientPort.findByDocument(clinicalRecord.getPatient());
+        Patient patient = patientPort.findByDocument(clinicalRecord.getPatient().getDocument());
         if(patient == null){
             throw new Exception("La histoia clinica debe tener un paciente valido");
         }
