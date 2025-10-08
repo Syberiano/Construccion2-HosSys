@@ -25,11 +25,11 @@ public class CreateClinicalRecord {
         }
         User doctor = userPort.findByDocument(clinicalRecord.getDoctor());
         if(doctor == null || !doctor.getRole().equals(Role.DOCTOR)){
-            throw new Exception("Laa historia clinica debe ser creada por un doctor valido");
+            throw new Exception("La historia clinica debe ser creada por un doctor valido");
         }
         ClinicalOrder clinicalOrder = clinicalOrderPort.findById(clinicalRecord.getClinicalOrder());
         if(clinicalOrder == null){
-            throw new Exception("L historia clinica debe tener una orden valida");
+            throw new Exception("El historia clinica debe tener una orden valida");
         }
         
         clinicalRecord.setPatient(patient);
