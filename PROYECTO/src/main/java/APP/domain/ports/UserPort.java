@@ -1,12 +1,25 @@
 package APP.domain.ports;
 
 import APP.domain.model.User;
+import java.util.List;
 
 public interface UserPort {
 
-    User findByDocument(User user);
-    User findByUserName(User user);
-    User deleteById(User User);
+    User save(User user) throws Exception;
 
-    void save(User user);
+    User findById(String id) throws Exception;
+
+    User findByDocument(String document) throws Exception;
+
+    User findByUserName(String username) throws Exception;
+
+    User findByEmail(String email) throws Exception;
+
+    boolean existsByUserName(String username) throws Exception;
+
+    boolean existsByDocument(String document) throws Exception;
+
+    boolean deleteById(String id) throws Exception;
+
+    List<User> findAll() throws Exception;
 }

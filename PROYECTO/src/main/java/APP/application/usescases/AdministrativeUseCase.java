@@ -1,4 +1,3 @@
-
 package APP.application.usescases;
 
 import APP.domain.model.Patient;
@@ -12,12 +11,26 @@ import APP.domain.services.GenerateInvoice;
 import APP.domain.services.CreateEmergencyContact;
 
 public class AdministrativeUseCase {
-    
-     private CreatePatient createPatient;
-    private UpdatePatient updatePatient;
-    private ManageAppointment manageAppointment;
-    private GenerateInvoice generateInvoice;
-    private CreateEmergencyContact createEmergencyContact;
+
+    private final CreatePatient createPatient;
+    private final UpdatePatient updatePatient;
+    private final ManageAppointment manageAppointment;
+    private final GenerateInvoice generateInvoice;
+    private final CreateEmergencyContact createEmergencyContact;
+
+    public AdministrativeUseCase(
+        CreatePatient createPatient,
+        UpdatePatient updatePatient,
+        ManageAppointment manageAppointment,
+        GenerateInvoice generateInvoice,
+        CreateEmergencyContact createEmergencyContact
+    ) {
+        this.createPatient = createPatient;
+        this.updatePatient = updatePatient;
+        this.manageAppointment = manageAppointment;
+        this.generateInvoice = generateInvoice;
+        this.createEmergencyContact = createEmergencyContact;
+    }
 
     public void createPatient(Patient patient) throws Exception {
         createPatient.create(patient);

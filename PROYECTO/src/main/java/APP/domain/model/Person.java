@@ -1,6 +1,7 @@
 package APP.domain.model;
-import APP.domain.model.emuns.Role;
 import java.util.Date;
+
+import APP.domain.model.enums.Role;
 
 public class Person {
     private String id;
@@ -12,8 +13,10 @@ public class Person {
     private String gender;
     private Role role;
 
-
     public Person(String id, String document, String name, String phoneNumber, Date birthDate, String address, String gender, Role role) {
+        if (id == null || id.isEmpty()) throw new IllegalArgumentException("El id no puede ser nulo o vacío");
+        if (document == null || document.isEmpty()) throw new IllegalArgumentException("El documento no puede ser nulo o vacío");
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
         this.id = id;
         this.document = document;
         this.name = name;

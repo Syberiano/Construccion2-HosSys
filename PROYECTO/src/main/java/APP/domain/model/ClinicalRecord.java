@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 import java.util.Date;
@@ -15,6 +14,9 @@ public class ClinicalRecord {
     private ClinicalOrder clinicalOrder;
 
     public ClinicalRecord(long id, Patient patient, User doctor, Date date, String motive, String diagnosis, String symptoms, ClinicalOrder clinicalOrder) {
+        if (patient == null) throw new IllegalArgumentException("El paciente no puede ser nulo");
+        if (doctor == null) throw new IllegalArgumentException("El doctor no puede ser nulo");
+        if (date == null) throw new IllegalArgumentException("La fecha no puede ser nula");
         this.id = id;
         this.patient = patient;
         this.doctor = doctor;

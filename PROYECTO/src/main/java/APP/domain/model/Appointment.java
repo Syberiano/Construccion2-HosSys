@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 import java.util.Date;
@@ -6,14 +5,18 @@ import java.util.Date;
 
 public class Appointment {
     
+    public enum Status {
+        PENDING, COMPLETED, CANCELLED
+    }
+
     private String id;
     private String patientId;
     private String doctorId;
     private Date date;
     private String reason;
-    private String status; 
+    private Status status; 
 
-    public Appointment(String id, String patientId, String doctorId, Date date, String reason, String status) {
+    public Appointment(String id, String patientId, String doctorId, Date date, String reason, Status status) {
         this.id = id;
         this.patientId = patientId;
         this.doctorId = doctorId;
@@ -22,8 +25,6 @@ public class Appointment {
         this.status = status;
     }
     
-    
-
     public String getId() {
         return id;
     }
@@ -44,7 +45,7 @@ public class Appointment {
         return reason;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -68,7 +69,7 @@ public class Appointment {
         this.reason = reason;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
     

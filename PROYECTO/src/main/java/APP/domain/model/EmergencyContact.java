@@ -9,12 +9,14 @@ public class EmergencyContact {
     }
 
     public EmergencyContact(String name, String relationship, String phoneNumber) {
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
+        if (relationship == null || relationship.isEmpty()) throw new IllegalArgumentException("La relación no puede ser nula o vacía");
+        if (phoneNumber == null || phoneNumber.isEmpty()) throw new IllegalArgumentException("El teléfono no puede ser nulo o vacío");
         this.name = name;
         this.relationship = relationship;
         this.phoneNumber = phoneNumber;
     }
 
-   
     public String getName() {
         return name;
     }

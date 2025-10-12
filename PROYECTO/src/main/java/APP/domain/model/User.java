@@ -1,6 +1,7 @@
 package APP.domain.model;
-import APP.domain.model.emuns.Role;
 import java.util.Date;
+
+import APP.domain.model.enums.Role;
 
 public class User extends Person {
     private String username;
@@ -18,7 +19,13 @@ public class User extends Person {
     }
 
     public User(Long id, String document, String name, String username, String email, String password, String role) {
-        super();
+        super(id != null ? id.toString() : null, document, name, null, null, null, null, role != null ? Role.valueOf(role) : null);
+        if (username == null || username.isEmpty()) throw new IllegalArgumentException("El nombre de usuario no puede ser nulo o vacío");
+        if (email == null || email.isEmpty()) throw new IllegalArgumentException("El email no puede ser nulo o vacío");
+        if (password == null || password.isEmpty()) throw new IllegalArgumentException("La contraseña no puede ser nula o vacía");
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
     public String getUsername() {

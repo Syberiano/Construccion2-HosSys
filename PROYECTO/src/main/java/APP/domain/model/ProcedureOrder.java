@@ -1,9 +1,8 @@
-
 package APP.domain.model;
 
 public class ProcedureOrder {
     
-     private String orderId;
+    private String orderId;
     private int itemNumber;
     private String procedureId;
     private String procedureName;
@@ -14,6 +13,13 @@ public class ProcedureOrder {
     private String specialtyId;
 
     public ProcedureOrder(String orderId, int itemNumber, String procedureId, String procedureName, int repetitions, int frequency, double cost, boolean requiresSpecialist, String specialtyId) {
+        if (orderId == null || orderId.isEmpty()) throw new IllegalArgumentException("El ID de la orden no puede ser nulo o vacío");
+        if (procedureId == null || procedureId.isEmpty()) throw new IllegalArgumentException("El ID del procedimiento no puede ser nulo o vacío");
+        if (procedureName == null || procedureName.isEmpty()) throw new IllegalArgumentException("El nombre del procedimiento no puede ser nulo o vacío");
+        if (specialtyId == null || specialtyId.isEmpty()) throw new IllegalArgumentException("El ID de la especialidad no puede ser nulo o vacío");
+        if (repetitions < 0) throw new IllegalArgumentException("Las repeticiones no pueden ser negativas");
+        if (frequency < 0) throw new IllegalArgumentException("La frecuencia no puede ser negativa");
+        if (cost < 0) throw new IllegalArgumentException("El costo no puede ser negativo");
         this.orderId = orderId;
         this.itemNumber = itemNumber;
         this.procedureId = procedureId;

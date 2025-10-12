@@ -1,7 +1,7 @@
 package APP.domain.validators;
 
 import APP.domain.model.Person;
-import APP.domain.model.emuns.Role;
+import APP.domain.model.enums.Role;
 
 import java.util.Date;
 

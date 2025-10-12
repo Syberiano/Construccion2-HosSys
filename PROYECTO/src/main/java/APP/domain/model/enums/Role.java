@@ -1,6 +1,6 @@
 
 
-package APP.domain.model.emuns;
+package APP.domain.model.enums;
 
 
 public enum Role {

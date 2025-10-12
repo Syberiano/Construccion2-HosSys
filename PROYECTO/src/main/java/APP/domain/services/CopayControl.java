@@ -1,12 +1,12 @@
-
 package APP.domain.services;
 
 import APP.domain.model.Invoice;
 import java.util.HashMap;
 import java.util.Map;
+
 public class CopayControl {
    
-     private Map<String, Double> copays;
+    private Map<String, Double> copays;
 
     public CopayControl() {
         this.copays = new HashMap<>();
@@ -29,10 +29,12 @@ public class CopayControl {
         System.out.println("Copago calculado para la póliza " + invoice.getPolicyId() + ": $" + copayAmount);
     }
 
-    public void showCopay(String policyId) throws Exception {
+    public double showCopay(String policyId) throws Exception {
         if (!copays.containsKey(policyId)) {
             throw new Exception("No se encontró copago para la póliza " + policyId);
         }
-        System.out.println("Copago de la póliza " + policyId + ": $" + copays.get(policyId));
+        double copay = copays.get(policyId);
+        System.out.println("Copago de la póliza " + policyId + ": $" + copay);
+        return copay;
     }
 }
