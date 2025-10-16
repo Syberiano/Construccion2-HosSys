@@ -11,11 +11,11 @@ public class CreateProcedure {
             throw new Exception("El procedimiento no puede ser nulo");  
         }
         if (procedure.getName() == null || procedure.getName().isEmpty()) {
-            throw new Exception("El nombre del procedimineto es obligatorio");
+            throw new Exception("El nombre del procedimiento es obligatorio");
         }
         if (procedure.getCost() <= 0) {
             throw new Exception("El costo del procedimiento debe ser mayor a 0");
         }
-        System.out.println("Procedimeinto registrado: " + procedure.getName()+ " con costo de: " + procedure.getCost());
+        System.out.println("Procedimiento registrado: " + procedure.getName()+ " con costo de: " + procedure.getCost());
     }
 }
