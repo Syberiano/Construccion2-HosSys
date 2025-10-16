@@ -8,7 +8,7 @@ public class CreateProcedure {
     
     public void create (Procedure procedure) throws Exception{ 
         if (procedure == null) {
-            throw new Exception("El procedimineto no puede ser nulo");  
+            throw new Exception("El procedimiento no puede ser nulo");  
         }
         if (procedure.getName() == null || procedure.getName().isEmpty()) {
             throw new Exception("El nombre del procedimineto es obligatorio");

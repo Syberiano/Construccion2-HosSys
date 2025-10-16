@@ -16,7 +16,7 @@ public class SearchClinicalRecord {
         }
         }
         if (result.isEmpty()) {
-            throw new Exception("No se encontraron historias clínicas para el paciente: " + patientId);
+            throw new Exception("No se encontraron historias clinicas para el paciente: " + patientId);
         }
         return result;
     }

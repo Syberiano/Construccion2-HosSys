@@ -19,16 +19,16 @@ public class EmergencyContactValidator extends SimpleValidator {
     }
     
     private static void validatePhoneNumber(String phoneNumber) {
-        validateNotEmpty(phoneNumber, "El número de teléfono es requerido");
+        validateNotEmpty(phoneNumber, "El numero de telefono es requerido");
         if (!phoneNumber.matches("\\+?[0-9]{10,15}")) {
-            throw new IllegalArgumentException("El número de teléfono debe tener entre 10 y 15 dígitos");
+            throw new IllegalArgumentException("El numero de telefono debe tener entre 10 y 15 digitos");
         }
     }
     
     private static void validateRelationship(String relationship) {
-        validateNotEmpty(relationship, "La relación con el contacto es requerida");
+        validateNotEmpty(relationship, "La relacion con el contacto es requerida");
         if (relationship.length() > 50) {
-            throw new IllegalArgumentException("La relación no puede tener más de 50 caracteres");
+            throw new IllegalArgumentException("La relacion no puede tener mas de 50 caracteres");
         }
     }
 }

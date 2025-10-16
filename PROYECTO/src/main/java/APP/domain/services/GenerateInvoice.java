@@ -23,16 +23,16 @@ public class GenerateInvoice {
             throw new Exception("El nombre del doctor es obligatorio");
         }
         if (invoice.getInsuranceCompanyName() == null || invoice.getInsuranceCompanyName().isEmpty()) {
-            throw new Exception("La compañía de seguros es obligatoria");
+            throw new Exception("La compañia de seguros es obligatoria");
         }
         if (invoice.getPolicyId() == null || invoice.getPolicyId().isEmpty()) {
-            throw new Exception("El ID de la póliza es obligatorio");
+            throw new Exception("El ID de la poliza es obligatorio");
         }
         if (!invoice.isPolicyStatus()) {
-            throw new Exception("La póliza no está activa");
+            throw new Exception("La poliza no esta activa");
         }
         if (invoice.getPolicyEndDate() == null || invoice.getPolicyEndDate().before(new Date())) {
-            throw new Exception("La póliza está vencida");
+            throw new Exception("La poliza esta vencida");
         }
 
         invoice.setStatus("GENERADA");
@@ -43,13 +43,13 @@ public class GenerateInvoice {
     public void payInvoice(String policyId) throws Exception {
         Invoice invoice = findByPolicyId(policyId);
         if (invoice == null) {
-            throw new Exception("No se encontró la factura con la póliza " + policyId);
+            throw new Exception("No se encontro la factura con la poliza " + policyId);
         }
         if (invoice.getStatus().equals("PAGADA")) {
-            throw new Exception("La factura ya está pagada");
+            throw new Exception("La factura ya esta pagada");
         }
         invoice.setStatus("PAGADA");
-        System.out.println("Factura con póliza " + policyId + " ha sido pagada.");
+        System.out.println("Factura con poliza " + policyId + " ha sido pagada.");
     }
 
     public void listAll() {
@@ -66,8 +66,8 @@ public class GenerateInvoice {
                 System.out.println("Factura -> Paciente: " + invoice.getPatientName()
                         + ", Doctor: " + invoice.getDoctorName()
                         + ", Aseguradora: " + invoice.getInsuranceCompanyName()
-                        + ", Póliza: " + invoice.getPolicyId()
-                        + ", Estado Póliza: " + policyState
+                        + ", Poliza: " + invoice.getPolicyId()
+                        + ", Estado Poliza: " + policyState
                         + ", Vencimiento: " + invoice.getPolicyEndDate()
                         + ", Estado Factura: " + invoice.getStatus());
             }

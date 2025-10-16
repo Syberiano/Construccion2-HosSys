@@ -6,8 +6,8 @@ public class UpdateClinicalRecord {
     
     public void update(ClinicalRecord record) throws Exception {
     if (record == null || record.getId() <= 0) {
-        throw new Exception("Datos de historia clínica inválidos");
+        throw new Exception("Datos de historia clinica invalidos");
     }
-    System.out.println("La historia clínica " + record.getId() + " fue actualizada correctamente.");
+    System.out.println("La historia clinica " + record.getId() + " fue actualizada correctamente.");
 }
 }

@@ -17,13 +17,13 @@ public class ManageAppointment {
             throw new Exception("La cita no puede ser nula");
         }
         if (appointment.getDate() == null || appointment.getDate().before(new Date())) {
-            throw new Exception("La fecha de la cita no es válida");
+            throw new Exception("La fecha de la cita no es valida");
         }
         if (appointment.getPatientId() == null || appointment.getPatientId().isEmpty()) {
             throw new Exception("El ID del paciente es obligatorio");
         }
         if (appointment.getDoctorId() == null || appointment.getDoctorId().isEmpty()) {
-            throw new Exception("El ID del médico es obligatorio");
+            throw new Exception("El ID del medico es obligatorio");
         }
 
         appointment.setStatus("PROGRAMADA");
@@ -41,7 +41,7 @@ public class ManageAppointment {
         }
 
         if (appointment == null) {
-            throw new Exception("No se encontró la cita con ID: " + appointmentId);
+            throw new Exception("No se encontro la cita con ID: " + appointmentId);
         }
 
         appointment.setStatus("CANCELADA");

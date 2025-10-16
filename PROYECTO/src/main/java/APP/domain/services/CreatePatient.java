@@ -50,7 +50,7 @@ public class CreatePatient {
         }
         
         if (patient.getPhoneNumber() == null || patient.getPhoneNumber().trim().isEmpty()) {
-            throw new IllegalArgumentException("El número de teléfono es requerido");
+            throw new IllegalArgumentException("El numero de telefono es requerido");
         }
         
         if (patient.getBirthDate() == null) {
@@ -58,11 +58,11 @@ public class CreatePatient {
         }
         
         if (patient.getAddress() == null || patient.getAddress().trim().isEmpty()) {
-            throw new IllegalArgumentException("La dirección es requerida");
+            throw new IllegalArgumentException("La direccion es requerida");
         }
         
         if (patient.getGender() == null || patient.getGender().trim().isEmpty()) {
-            throw new IllegalArgumentException("El género es requerido");
+            throw new IllegalArgumentException("El genero es requerido");
         }
         
         if (patient.getEmergencyContact() == null) {
@@ -70,7 +70,7 @@ public class CreatePatient {
         }
         
         if (patient.getHealthInsurance() == null) {
-            throw new IllegalArgumentException("El seguro médico es requerido");
+            throw new IllegalArgumentException("El seguro medico es requerido");
         }
     }
     
@@ -79,11 +79,12 @@ public class CreatePatient {
         int age = Period.between(birthLocalDate, LocalDate.now()).getYears();
         
         if (age < 0 || age > 120) {
-            throw new IllegalArgumentException("La fecha de nacimiento no es válida");
+            throw new IllegalArgumentException("La fecha de nacimiento no es valida");
         }
         
-        if (age < 18 && age > 0)
+        if (age < 18 && age > 0){
             System.out.println("Advertencia: Paciente menor de edad. Verificar representante legal.");
         }
     }
+}
 

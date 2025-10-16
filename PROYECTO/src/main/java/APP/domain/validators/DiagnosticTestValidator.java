@@ -5,9 +5,9 @@ import APP.domain.model.DiagnosticTest;
 public class DiagnosticTestValidator extends SimpleValidator {
     
     public static void validate(DiagnosticTest test) {
-        validateNotNull(test, "La prueba diagnóstica no puede ser nula");
-        validateNotEmpty(test.getId(), "El ID de la prueba diagnóstica es requerido");
-        validateNotEmpty(test.getName(), "El nombre de la prueba diagnóstica es requerido");
+        validateNotNull(test, "La prueba diagnostica no puede ser nula");
+        validateNotEmpty(test.getId(), "El ID de la prueba diagnostica es requerido");
+        validateNotEmpty(test.getName(), "El nombre de la prueba diagnostica es requerido");
         validatePositive(test.getCost(), "El costo de la prueba no puede ser negativo");
         validateNotNull(test.getSpecialty(), "La especialidad de la prueba es requerida");
         

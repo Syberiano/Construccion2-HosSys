@@ -19,14 +19,14 @@ public class UpdateDiagnosticTestInventory {
             DiagnosticTest updatedTest = updatePort.updateStock(testId, quantity);
             
             if (updatedTest == null) {
-                throw new RuntimeException("No se pudo actualizar el inventario de la prueba diagnóstica");
+                throw new RuntimeException("No se pudo actualizar el inventario de la prueba diagnostica");
             }
             
             return updatedTest;
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Error al actualizar inventario: " + e.getMessage());
         } catch (Exception e) {
-            throw new RuntimeException("Error al actualizar el inventario de la prueba diagnóstica", e);
+            throw new RuntimeException("Error al actualizar el inventario de la prueba diagnostica", e);
         }
     }
 }

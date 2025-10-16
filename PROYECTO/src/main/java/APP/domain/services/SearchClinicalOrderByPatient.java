@@ -11,7 +11,7 @@ public class SearchClinicalOrderByPatient {
 
     public List<ClinicalOrder> search(Patient patient) throws Exception {
         if (patient == null || patient.getId() == null) {
-            throw new Exception("Paciente inválido");
+            throw new Exception("Paciente invalido");
         }
 
         List<ClinicalOrder> result = new ArrayList<>();
@@ -22,7 +22,7 @@ public class SearchClinicalOrderByPatient {
         }
 
         if (result.isEmpty()) {
-            throw new Exception("No se encontraron órdenes clínicas para el paciente: " + patient.getName());
+            throw new Exception("No se encontraron ordenes clinicas para el paciente: " + patient.getName());
         }
 
         return result;

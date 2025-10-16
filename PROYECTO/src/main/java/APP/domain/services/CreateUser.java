@@ -7,11 +7,11 @@ public class CreateUser {
     public User execute(Long id, String document, String name, String username, String email, String password, String role) {
         
         if (username == null || username.isEmpty()) {
-            throw new IllegalArgumentException("El nombre de usuario no puede estar vacío");
+            throw new IllegalArgumentException("El nombre de usuario no puede estar vacio");
         }
 
         if (email == null || !email.contains("@")) {
-            throw new IllegalArgumentException("El email no es válido");
+            throw new IllegalArgumentException("El email no es valido");
         }
 
         if (password == null || password.length() < 6) {

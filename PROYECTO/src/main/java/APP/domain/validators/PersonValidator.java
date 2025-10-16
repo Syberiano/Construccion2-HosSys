@@ -22,7 +22,7 @@ public class PersonValidator extends SimpleValidator {
     protected static void validateId(String id) {
         validateNotEmpty(id, "El ID es requerido");
         if (!id.matches("[A-Za-z0-9-]+")) {
-            throw new IllegalArgumentException("El ID solo puede contener letras, números y guiones");
+            throw new IllegalArgumentException("El ID solo puede contener letras, numeros y guiones");
         }
     }
     
@@ -44,9 +44,9 @@ public class PersonValidator extends SimpleValidator {
     }
     
     protected static void validatePhoneNumber(String phoneNumber) {
-        validateNotEmpty(phoneNumber, "El número de teléfono es requerido");
+        validateNotEmpty(phoneNumber, "El numero de telefono es requerido");
         if (!phoneNumber.matches("\\+?[0-9]{10,15}")) {
-            throw new IllegalArgumentException("El número de teléfono debe tener entre 10 y 15 dígitos");
+            throw new IllegalArgumentException("El numero de telefono debe tener entre 10 y 15 digitos");
         }
     }
     
@@ -64,16 +64,16 @@ public class PersonValidator extends SimpleValidator {
     }
     
     protected static void validateAddress(String address) {
-        validateNotEmpty(address, "La dirección es requerida");
+        validateNotEmpty(address, "La direccion es requerida");
         if (address.length() > 200) {
-            throw new IllegalArgumentException("La dirección no puede tener más de 200 caracteres");
+            throw new IllegalArgumentException("La direccion no puede tener mas de 200 caracteres");
         }
     }
     
     protected static void validateGender(String gender) {
-        validateNotEmpty(gender, "El género es requerido");
+        validateNotEmpty(gender, "El genero es requerido");
         if (!gender.equalsIgnoreCase("M") && !gender.equalsIgnoreCase("F") && !gender.equalsIgnoreCase("O")) {
-            throw new IllegalArgumentException("El género debe ser M (Masculino), F (Femenino) u O (Otro)");
+            throw new IllegalArgumentException("El genero debe ser M (Masculino), F (Femenino) u O (Otro)");
         }
     }
     

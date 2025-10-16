@@ -14,7 +14,7 @@ public class UpdateEmployee {
 
     public void update(Employee employee) throws Exception {
         if (employee == null || employee.getId() == null || employee.getId().isEmpty()) {
-            throw new Exception("El empleado no es válido");
+            throw new Exception("El empleado no es valido");
         }
 
         for (int i = 0; i < employees.size(); i++) {
@@ -25,6 +25,6 @@ public class UpdateEmployee {
             }
         }
 
-        throw new Exception("No se encontró un empleado con el ID: " + employee.getId());
+        throw new Exception("No se encontro un empleado con el ID: " + employee.getId());
     }
 }
