@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 
@@ -10,6 +9,10 @@ public class Employee {
     private String department;
 
     public Employee(String id, String name, String role, String department) {
+        if (id == null || id.isEmpty()) throw new IllegalArgumentException("El id no puede ser nulo o vacío");
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
+        if (role == null || role.isEmpty()) throw new IllegalArgumentException("El rol no puede ser nulo o vacío");
+        if (department == null || department.isEmpty()) throw new IllegalArgumentException("El departamento no puede ser nulo o vacío");
         this.id = id;
         this.name = name;
         this.role = role;

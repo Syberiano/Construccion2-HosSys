@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 
@@ -14,6 +13,8 @@ public class DiagnosticOrder {
     private String specialtyId;
 
     public DiagnosticOrder(String orderId, int itemNumber, String diagnosticId, String diagnosticName, int quantity, double cost, boolean requiresSpecialist, String specialtyId) {
+        if (quantity < 0) throw new IllegalArgumentException("La cantidad no puede ser negativa");
+        if (cost < 0) throw new IllegalArgumentException("El costo no puede ser negativo");
         this.orderId = orderId;
         this.itemNumber = itemNumber;
         this.diagnosticId = diagnosticId;

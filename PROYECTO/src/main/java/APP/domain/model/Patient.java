@@ -1,8 +1,8 @@
 package APP.domain.model;
 
-import APP.domain.model.emuns.Role;
-
 import java.util.Date;
+
+import APP.domain.model.enums.Role;
 
 public class Patient extends Person{
 
@@ -15,6 +15,8 @@ public class Patient extends Person{
 
     public Patient(String id, String document, String name, String phoneNumber, Date birthDate, String address, String gender, Role role, EmergencyContact emergencyContact, HealthInsurance healthInsurance) {
         super(id, document, name, phoneNumber, birthDate, address, gender, role);
+        if (emergencyContact == null) throw new IllegalArgumentException("El contacto de emergencia no puede ser nulo");
+        if (healthInsurance == null) throw new IllegalArgumentException("El seguro de salud no puede ser nulo");
         this.emergencyContact = emergencyContact;
         this.healthInsurance = healthInsurance;
     }

@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 
@@ -12,6 +11,12 @@ public class MedicationOrder {
      private double cost;
 
     public MedicationOrder(String orderId, int itemNumber, String medicineId, String medicineName, String dose, String duration, double cost) {
+        if (orderId == null || orderId.isEmpty()) throw new IllegalArgumentException("El ID de la orden no puede ser nulo o vacío");
+        if (medicineId == null || medicineId.isEmpty()) throw new IllegalArgumentException("El ID del medicamento no puede ser nulo o vacío");
+        if (medicineName == null || medicineName.isEmpty()) throw new IllegalArgumentException("El nombre del medicamento no puede ser nulo o vacío");
+        if (dose == null || dose.isEmpty()) throw new IllegalArgumentException("La dosis no puede ser nula o vacía");
+        if (duration == null || duration.isEmpty()) throw new IllegalArgumentException("La duración no puede ser nula o vacía");
+        if (cost < 0) throw new IllegalArgumentException("El costo no puede ser negativo");
         this.orderId = orderId;
         this.itemNumber = itemNumber;
         this.medicineId = medicineId;

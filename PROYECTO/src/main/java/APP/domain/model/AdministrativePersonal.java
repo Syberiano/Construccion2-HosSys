@@ -1,6 +1,5 @@
 package APP.domain.model;
-
-import APP.domain.model.emuns.Role;
+import APP.domain.model.enums.Role;
 
 import java.util.Date;
 

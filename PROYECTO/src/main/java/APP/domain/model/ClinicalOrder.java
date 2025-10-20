@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 import java.util.Date;
@@ -6,16 +5,18 @@ import java.util.List;
 
 
 public class ClinicalOrder {
-    
-        private long id;
-	private Patient patient;
-	private User doctor;
-	private Date date;
-        private List<MedicationOrder> medications;
-        private List<ProcedureOrder> procedures;
-        private List<DiagnosticOrder> diagnostics;
+    private long id;
+    private Patient patient;
+    private User doctor;
+    private Date date;
+    private List<MedicationOrder> medications;
+    private List<ProcedureOrder> procedures;
+    private List<DiagnosticOrder> diagnostics;
 
     public ClinicalOrder(long id, Patient patient, User doctor, Date date, List<MedicationOrder> medications, List<ProcedureOrder> procedures, List<DiagnosticOrder> diagnostics) {
+        if (patient == null) throw new IllegalArgumentException("El paciente no puede ser nulo");
+        if (doctor == null) throw new IllegalArgumentException("El doctor no puede ser nulo");
+        if (date == null) throw new IllegalArgumentException("La fecha no puede ser nula");
         this.id = id;
         this.patient = patient;
         this.doctor = doctor;

@@ -1,4 +1,3 @@
-
 package APP.application.usescases;
 
 import APP.domain.model.ClinicalOrder;
@@ -11,25 +10,36 @@ import java.util.List;
 
 public class DoctorUseCase {
     
-    private CreateClinicalRecord createClinicalRecord;
-    private UpdateClinicalRecord updateClinicalRecord;
-    private CreateClinicalOrder createClinicalOrder;
-    private SearchClinicalRecord searchClinicalRecord;
-    
+    private final CreateClinicalRecord createClinicalRecord;
+    private final UpdateClinicalRecord updateClinicalRecord;
+    private final CreateClinicalOrder createClinicalOrder;
+    private final SearchClinicalRecord searchClinicalRecord;
+
+    public DoctorUseCase(
+        CreateClinicalRecord createClinicalRecord,
+        UpdateClinicalRecord updateClinicalRecord,
+        CreateClinicalOrder createClinicalOrder,
+        SearchClinicalRecord searchClinicalRecord
+    ) {
+        this.createClinicalRecord = createClinicalRecord;
+        this.updateClinicalRecord = updateClinicalRecord;
+        this.createClinicalOrder = createClinicalOrder;
+        this.searchClinicalRecord = searchClinicalRecord;
+    }
     
     public List<ClinicalRecord> searchHistory(String patientId) throws Exception {
-		return searchClinicalRecord.findByPatient(patientId);
-	}
+        return searchClinicalRecord.findByPatient(patientId);
+    }
 
-	public void createMedicalRecord(ClinicalRecord record) throws Exception {
-		createClinicalRecord.create(record);
-	}
+    public void createMedicalRecord(ClinicalRecord record) throws Exception {
+        createClinicalRecord.create(record);
+    }
 
-	public void updateMedicalRecord(ClinicalRecord record) throws Exception {
-		updateClinicalRecord.update(record);
-	}
+    public void updateMedicalRecord(ClinicalRecord record) throws Exception {
+        updateClinicalRecord.update(record);
+    }
 
-	public void createOrder(ClinicalOrder order) throws Exception {
-		createClinicalOrder.create(order);
-	}
+    public void createOrder(ClinicalOrder order) throws Exception {
+        createClinicalOrder.create(order);
+    }
 }

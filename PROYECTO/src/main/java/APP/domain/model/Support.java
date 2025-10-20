@@ -1,8 +1,8 @@
 package APP.domain.model;
 
-import APP.domain.model.emuns.Role;
-
 import java.util.Date;
+
+import APP.domain.model.enums.Role;
 
 public class Support extends Person{
 

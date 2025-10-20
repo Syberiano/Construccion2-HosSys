@@ -1,4 +1,3 @@
-
 package APP.application.usescases;
 
 import APP.domain.model.Employee;
@@ -8,8 +7,8 @@ import java.util.List;
 
 public class RrhhUseCase {
     
-     private CreateEmployee createEmployee;
-    private UpdateEmployee updateEmployee;
+    private final CreateEmployee createEmployee;
+    private final UpdateEmployee updateEmployee;
 
     public RrhhUseCase(CreateEmployee createEmployee, UpdateEmployee updateEmployee) {
         this.createEmployee = createEmployee;

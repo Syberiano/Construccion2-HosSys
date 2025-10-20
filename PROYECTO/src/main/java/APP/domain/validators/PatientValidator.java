@@ -2,7 +2,7 @@ package APP.domain.validators;
 
 import APP.domain.model.Patient;
 import APP.domain.model.Person;
-import APP.domain.model.emuns.Role;
+import APP.domain.model.enums.Role;
 
 public class PatientValidator extends PersonValidator {
     

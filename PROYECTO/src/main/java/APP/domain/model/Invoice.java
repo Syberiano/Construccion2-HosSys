@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 import java.util.Date;
@@ -14,6 +13,11 @@ public class Invoice {
 
     public Invoice(String patientName, String doctorName, String insuranceCompanyName,
                    String policyId, boolean policyStatus, Date policyEndDate) {
+        if (patientName == null || patientName.isEmpty()) throw new IllegalArgumentException("El nombre del paciente no puede ser nulo o vacío");
+        if (doctorName == null || doctorName.isEmpty()) throw new IllegalArgumentException("El nombre del doctor no puede ser nulo o vacío");
+        if (insuranceCompanyName == null || insuranceCompanyName.isEmpty()) throw new IllegalArgumentException("El nombre de la aseguradora no puede ser nulo o vacío");
+        if (policyId == null || policyId.isEmpty()) throw new IllegalArgumentException("El ID de la póliza no puede ser nulo o vacío");
+        if (policyEndDate == null) throw new IllegalArgumentException("La fecha de fin de la póliza no puede ser nula");
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.insuranceCompanyName = insuranceCompanyName;

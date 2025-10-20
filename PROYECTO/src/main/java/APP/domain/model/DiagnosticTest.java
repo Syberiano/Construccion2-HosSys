@@ -1,4 +1,3 @@
-
 package APP.domain.model;
 
 
@@ -11,6 +10,9 @@ public class DiagnosticTest {
     private Specialty specialty;
 
     public DiagnosticTest(String id, String name, String description, double cost, Specialty specialty) {
+        if (id == null || id.isEmpty()) throw new IllegalArgumentException("El id no puede ser nulo o vacío");
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
+        if (cost < 0) throw new IllegalArgumentException("El costo no puede ser negativo");
         this.id = id;
         this.name = name;
         this.description = description;
