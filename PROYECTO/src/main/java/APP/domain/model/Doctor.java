@@ -1,4 +1,4 @@
-package APP.domain.model;
+    package APP.domain.model;
 
 import APP.domain.model.enums.Role; // corregido
 

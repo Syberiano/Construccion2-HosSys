@@ -3,74 +3,78 @@ package APP.domain.model;
 import java.util.Date;
 
 
-public class Appointment {
-    
-    public enum Status {
-        PENDING, COMPLETED, CANCELLED
-    }
+    public class Appointment {
 
-    private String id;
-    private String patientId;
-    private String doctorId;
-    private Date date;
-    private String reason;
-    private Status status; 
+        public void setStatus(String programada) {
+            throw new UnsupportedOperationException("Not supported yet."); 
+        }
 
-    public Appointment(String id, String patientId, String doctorId, Date date, String reason, Status status) {
-        this.id = id;
-        this.patientId = patientId;
-        this.doctorId = doctorId;
-        this.date = date;
-        this.reason = reason;
-        this.status = status;
-    }
-    
-    public String getId() {
-        return id;
-    }
+        public enum Status {
+            PENDING, COMPLETED, CANCELLED
+        }
 
-    public String getPatientId() { 
-        return patientId;
-    }
+        private String id;
+        private String patientId;
+        private String doctorId;
+        private Date date;
+        private String reason;
+        private Status status; 
 
-    public String getDoctorId() {
-        return doctorId;
-    }
+        public Appointment(String id, String patientId, String doctorId, Date date, String reason, Status status) {
+            this.id = id;
+            this.patientId = patientId;
+            this.doctorId = doctorId;
+            this.date = date;
+            this.reason = reason;
+            this.status = status;
+        }
 
-    public Date getDate() {
-        return date;
-    }
+        public String getId() {
+            return id;
+        }
 
-    public String getReason() {
-        return reason;
-    }
+        public String getPatientId() { 
+            return patientId;
+        }
 
-    public Status getStatus() {
-        return status;
-    }
+        public String getDoctorId() {
+            return doctorId;
+        }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+        public Date getDate() {
+            return date;
+        }
 
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
+        public String getReason() {
+            return reason;
+        }
 
-    public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
-    }
+        public Status getStatus() {
+            return status;
+        }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+        public void setId(String id) {
+            this.id = id;
+        }
 
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
+        public void setPatientId(String patientId) {
+            this.patientId = patientId;
+        }
 
-    public void setStatus(Status status) {
-        this.status = status;
+        public void setDoctorId(String doctorId) {
+            this.doctorId = doctorId;
+        }
+
+        public void setDate(Date date) {
+            this.date = date;
+        }
+
+        public void setReason(String reason) {
+            this.reason = reason;
+        }
+
+        public void setStatus(Status status) {
+            this.status = status;
+        }
+
     }
-    
-}

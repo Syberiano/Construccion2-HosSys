@@ -17,7 +17,7 @@ public class CreatePatient {
         this.patientPort = patientPort;
     }
     
-    public void create(Patient patient) throws IllegalArgumentException {
+    public void create(Patient patient) throws IllegalArgumentException, Exception {
         if (patient == null) {
             throw new IllegalArgumentException("El paciente no puede ser nulo");
         }

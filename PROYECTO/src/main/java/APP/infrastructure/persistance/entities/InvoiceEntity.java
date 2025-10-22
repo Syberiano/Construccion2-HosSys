@@ -1,30 +1,61 @@
-package APP.domain.model;
 
+package APP.infrastructure.persistance.entities;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.UUID;
 
-public class Invoice {
+@Entity
+@Table(name = "invoices")
+public class InvoiceEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+
+    @Column(nullable = false)
     private String patientName;
+
+    @Column(nullable = false)
     private String doctorName;
+
+    @Column(nullable = false)
     private String insuranceCompanyName;
+
+    @Column(nullable = false, unique = true)
     private String policyId;
+
+    @Column(nullable = false)
     private boolean policyStatus;
+
+    @Temporal(TemporalType.DATE)
     private Date policyEndDate;
+
+    @Column(nullable = false)
     private String status;
 
-    public Invoice(String patientName, String doctorName, String insuranceCompanyName,
-                   String policyId, boolean policyStatus, Date policyEndDate , String Status) {
-        if (patientName == null || patientName.isEmpty()) throw new IllegalArgumentException("El nombre del paciente no puede ser nulo o vacío");
-        if (doctorName == null || doctorName.isEmpty()) throw new IllegalArgumentException("El nombre del doctor no puede ser nulo o vacío");
-        if (insuranceCompanyName == null || insuranceCompanyName.isEmpty()) throw new IllegalArgumentException("El nombre de la aseguradora no puede ser nulo o vacío");
-        if (policyId == null || policyId.isEmpty()) throw new IllegalArgumentException("El ID de la póliza no puede ser nulo o vacío");
-        if (policyEndDate == null) throw new IllegalArgumentException("La fecha de fin de la póliza no puede ser nula");
+    public InvoiceEntity() {}
+
+    public InvoiceEntity(String id, String patientName, String doctorName, String insuranceCompanyName, String policyId, boolean policyStatus, Date policyEndDate, String status) {
+        this.id = id;
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.insuranceCompanyName = insuranceCompanyName;
         this.policyId = policyId;
         this.policyStatus = policyStatus;
         this.policyEndDate = policyEndDate;
-        this.status = "GENERADA";
+        this.status = status;
+    }
+
+    
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getPatientName() {
@@ -82,5 +113,6 @@ public class Invoice {
     public void setStatus(String status) {
         this.status = status;
     }
+
     
 }

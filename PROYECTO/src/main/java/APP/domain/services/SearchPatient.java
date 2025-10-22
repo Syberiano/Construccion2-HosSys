@@ -14,4 +14,8 @@ public class SearchPatient {
             throw new Exception("Paciente con id " + id + " no encontrado.");
         }
     }
+
+    public Patient findById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
