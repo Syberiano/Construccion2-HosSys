@@ -1,8 +1,6 @@
 package APP.domain.services;
 
 import APP.domain.model.Patient;
-import APP.domain.model.HealthInsurance;
-import APP.domain.model.EmergencyContact;
 import APP.domain.ports.PatientPort;
 import java.time.LocalDate;
 import java.time.Period;

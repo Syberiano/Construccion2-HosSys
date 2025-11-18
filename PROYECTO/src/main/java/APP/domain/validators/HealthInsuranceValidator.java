@@ -25,10 +25,13 @@ public class HealthInsuranceValidator extends SimpleValidator {
         }
     }
     
+    // Método no usado actualmente, pero disponible para validación futura
+    /*
     private static void validatePolicyNumber(String policyNumber) {
         validateNotEmpty(policyNumber, "El número de poliza es requerido");
         if (policyNumber.length() > 50) {
             throw new IllegalArgumentException("El número de poliza no puede tener más de 50 caracteres");
         }
     }
+    */
 }

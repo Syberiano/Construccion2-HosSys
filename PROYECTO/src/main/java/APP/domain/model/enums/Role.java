@@ -11,4 +11,5 @@ public enum Role {
     RECEPTIONIST,
     PHARMACIST,
     SUPPORT,
+    RRHH
 }

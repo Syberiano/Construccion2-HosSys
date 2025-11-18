@@ -1,9 +1,6 @@
 
 package APP.infrastructure.persistance.mapper;
 import APP.domain.model.Patient;
-import APP.domain.model.EmergencyContact;
-import APP.domain.model.HealthInsurance;
-import APP.domain.model.enums.Role;
 import APP.infrastructure.persistance.entities.PatientEntity;
 public class PatientMapper {
     

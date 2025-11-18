@@ -1,4 +1,7 @@
 package APP.domain.model;
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 
 public class EmergencyContact {
     private String name;

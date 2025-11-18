@@ -35,9 +35,21 @@ public class PatientEntity {
 
     @Column
     private String gender;
-    @Column
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "name", column = @Column(name = "emergency_contact_name")),
+            @AttributeOverride(name = "relationship", column = @Column(name = "emergency_contact_relationship")),
+            @AttributeOverride(name = "phoneNumber", column = @Column(name = "emergency_contact_phone"))
+    })
     private EmergencyContact emergencyContact;
-    @Column
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "insuranceId", column = @Column(name = "insurance_id")),
+            @AttributeOverride(name = "providerName", column = @Column(name = "insurance_provider_name")),
+            @AttributeOverride(name = "policyNumber", column = @Column(name = "insurance_policy_number")),
+            @AttributeOverride(name = "coverageDetails", column = @Column(name = "insurance_coverage_details"))
+    })
     private HealthInsurance healthInsurance;
     @Column
     private Role role;
@@ -51,9 +63,6 @@ public class PatientEntity {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
-        this.emergencyContact = emergencyContact;
-        this.healthInsurance = healthInsurance;
-        this.role = role;
     }
 
     public String getId() {

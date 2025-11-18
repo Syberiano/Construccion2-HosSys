@@ -7,10 +7,10 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 public class UserEntity {
-    
-     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
 
     private String document;
     private String name;

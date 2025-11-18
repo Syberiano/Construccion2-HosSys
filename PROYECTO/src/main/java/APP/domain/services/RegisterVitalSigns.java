@@ -1,18 +1,23 @@
-
 package APP.domain.services;
 
 import java.util.Date;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import APP.infrastructure.persistance.entities.VitalSignEntity;
+import APP.infrastructure.persistance.repository.VitalSignRepository;
+
+@Service
 public class RegisterVitalSigns {
     
-     private Map<String, Map<String, String>> vitalSignsRegistry;
+    @Autowired
+    private VitalSignRepository vitalSignRepo;
 
     public RegisterVitalSigns() {
-        this.vitalSignsRegistry = new HashMap<>();
+        // constructor vacío, usamos JPA para persistencia
     }
 
-    public void register(String patientId, String bloodPressure, int heartRate, double temperature, double weight) throws Exception {
+    public VitalSignEntity register(String patientId, String bloodPressure, int heartRate, double temperature, double weight) throws Exception {
         if (patientId == null || patientId.isEmpty()) {
             throw new Exception("El ID del paciente es obligatorio");
         }
@@ -20,21 +25,21 @@ public class RegisterVitalSigns {
             throw new Exception("Los valores de los signos vitales deben ser mayores a 0");
         }
 
-        Map<String, String> vitals = new HashMap<>();
-        vitals.put("Presion Arterial", bloodPressure);
-        vitals.put("Frecuencia Cardiaca", heartRate + " lpm");
-        vitals.put("Temperatura", temperature + " °C");
-        vitals.put("Peso", weight + " kg");
-        vitals.put("Fecha Registro", new Date().toString());
-
-        vitalSignsRegistry.put(patientId, vitals);
-        System.out.println("Signos vitales registrados para el paciente " + patientId);
+        VitalSignEntity entity = new VitalSignEntity(patientId, bloodPressure, heartRate, temperature, weight, new Date());
+        vitalSignRepo.save(entity);
+        System.out.println("Signos vitales registrados para el paciente " + patientId + " (id registro: " + entity.getId() + ")");
+        return entity;
     }
 
-    public Map<String, String> getVitalSigns(String patientId) throws Exception {
-        if (!vitalSignsRegistry.containsKey(patientId)) {
+    public VitalSignEntity getLatest(String patientId) throws Exception {
+        List<VitalSignEntity> list = vitalSignRepo.findByPatientIdOrderByRecordedAtDesc(patientId);
+        if (list == null || list.isEmpty()) {
             throw new Exception("No se encontraron signos vitales para el paciente con ID: " + patientId);
         }
-        return vitalSignsRegistry.get(patientId);
+        return list.get(0);
+    }
+
+    public List<VitalSignEntity> getAll(String patientId) {
+        return vitalSignRepo.findByPatientIdOrderByRecordedAtDesc(patientId);
     }
 }
